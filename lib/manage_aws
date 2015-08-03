@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require 'thor'
+require './aws_security_group_manager'
+ 
+class CLI < Thor
+  desc 'update_rds_staging', 'to update rds staging security group, add the desired rule to the rds_ips.yml file and run this command'
+  def update_rds_staging
+    rds = AWSSecurityGroupManager.new('rds')
+    rds.update_rds_staging
+  end
+  
+  desc 'update_ec2_staging', 'to update ec2 staging security group, add the desired ip to the ec2_staging_ips.yml file and run this command'
+  def update_ec2_staging
+    ec2 = AWSSecurityGroupManager.new('ec2')
+    ec2.update_ec2_staging
+  end
+end
+ 
+CLI.start(ARGV)
