@@ -1,0 +1,6 @@
+redis: 
+    id: 'sg-01687d69'
+    port: '80'
+staging:
+    id: 'sg-54a7583f'
+    port: '0..65535'

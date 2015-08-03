@@ -1,0 +1,6 @@
+elb_1: 
+    name: 'staging-elb'                    
+    port: '80'
+elb_2: 
+    name: 'staging-elb'
+    port: '8080'
